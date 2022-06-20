@@ -1,0 +1,85 @@
+{
+  "id": "post",
+  "label": "post",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "Uid",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "subtitle": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Subtitle",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1,heading2,heading3,heading4,heading5,heading6,hyperlink"
+        }
+      },
+      "author": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Author",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading4,heading5,heading6,paragraph,heading1,heading2,heading3"
+        }
+      },
+      "banner": {
+        "type": "Image",
+        "config": {
+          "label": "Banner",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "content": {
+        "type": "Group",
+        "config": {
+          "label": "Content",
+          "fields": {
+            "heading": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Heading",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+              }
+            },
+            "body": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Body",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

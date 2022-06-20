@@ -1,0 +1,71 @@
+{
+  "id": "54ee46b2-9fd8-49ac-80c1-1b21c212e9d3",
+  "uid": "eos-dolores-quia",
+  "type": "post",
+  "data": {
+    "title": [
+      {
+        "type": "heading1",
+        "text": "Deliver distributed schemas",
+        "spans": []
+      }
+    ],
+    "subtitle": [
+      {
+        "type": "heading1",
+        "text": "Utilize strategic niches",
+        "spans": []
+      }
+    ],
+    "author": [
+      {
+        "type": "paragraph",
+        "text": "Aliquip commodo irure elit deserunt id quis. Tempor qui deserunt dolore laboris consequat sunt proident sit enim duis. Officia officia consequat dolore elit et dolore ut.",
+        "spans": []
+      }
+    ],
+    "banner": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=900&h=500&fit=crop"
+    },
+    "content": [
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Maximize holistic metrics",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Ipsum magna dolor proident.",
+            "spans": []
+          }
+        ]
+      },
+      {
+        "heading": [
+          {
+            "type": "heading1",
+            "text": "Integrate collaborative blockchains",
+            "spans": []
+          }
+        ],
+        "body": [
+          {
+            "type": "paragraph",
+            "text": "Excepteur ullamco ut consequat cillum incididunt mollit. Velit velit excepteur minim incididunt aute do laboris eiusmod commodo et occaecat nulla qui Lorem qui. Voluptate eiusmod fugiat eu reprehenderit amet exercitation ex quis irure ut.",
+            "spans": []
+          }
+        ]
+      }
+    ]
+  }
+}
