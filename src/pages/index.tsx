@@ -1,5 +1,6 @@
 import { PrismicDocument, Query } from '@prismicio/types';
 import { GetStaticProps } from 'next';
+import Link from 'next/link';
 import { RichText } from 'prismic-dom';
 import { useState } from 'react';
 
@@ -58,14 +59,16 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
     <main className={styles.container}>
       <div className={styles.posts}>
         {posts.map(post => (
-          <div key={post.uid} className={styles.post}>
-            <h1>{post.data.title}</h1>
-            <p>{post.data.subtitle}</p>
-            <div>
-              <span>{post.data.author}</span>
-              <span>{post.first_publication_date}</span>
-            </div>
-          </div>
+          <Link key={post.uid} href={`/post/${post.uid}`} passHref>
+            <a className={styles.post}>
+              <h1>{post.data.title}</h1>
+              <p>{post.data.subtitle}</p>
+              <div>
+                <span>{post.data.author}</span>
+                <span>{post.first_publication_date}</span>
+              </div>
+            </a>
+          </Link>
         ))}
       </div>
       {nextPage && (
