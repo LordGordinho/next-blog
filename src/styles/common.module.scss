@@ -1,1 +1,14 @@
-// TODO
+.metadatas {
+  margin: 1.5rem 0;
+  display: flex;
+  color: var(--gray-700);
+
+  .metadataItem{
+    span {
+      margin-left: 0.3rem;
+    }
+    & + .metadataItem {
+      margin-left: 2rem;
+    }
+  }
+}

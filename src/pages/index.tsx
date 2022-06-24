@@ -1,8 +1,11 @@
 import { PrismicDocument, Query } from '@prismicio/types';
+import { format } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 import { RichText } from 'prismic-dom';
 import { useState } from 'react';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 
 import { getPrismicClient } from '../services/prismic';
 import commonStyles from '../styles/common.module.scss';
@@ -42,7 +45,13 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
     const new_posts = next_posts.results.map(post => {
       return {
         uid: post.uid,
-        first_publication_date: post.first_publication_date,
+        first_publication_date: format(
+          new Date(post.first_publication_date),
+          'Q LLL yyyy',
+          {
+            locale: ptBR,
+          }
+        ),
         data: {
           title: RichText.asText(post.data.title),
           subtitle: RichText.asText(post.data.subtitle),
@@ -59,20 +68,30 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
     <main className={styles.container}>
       <div className={styles.posts}>
         {posts.map(post => (
-          <Link key={post.uid} href={`/post/${post.uid}`} passHref>
+          <Link key={post.uid} href={`/post/${post.uid}`}>
             <a className={styles.post}>
               <h1>{post.data.title}</h1>
-              <p>{post.data.subtitle}</p>
-              <div>
-                <span>{post.data.author}</span>
-                <span>{post.first_publication_date}</span>
+              <h2>{post.data.subtitle}</h2>
+              <div className={commonStyles.metadatas}>
+                <div className={commonStyles.metadataItem}>
+                  <FiCalendar />
+                  <span>{post.first_publication_date}</span>
+                </div>
+                <div className={commonStyles.metadataItem}>
+                  <FiUser />
+                  <span>{post.data.author}</span>
+                </div>
               </div>
             </a>
           </Link>
         ))}
       </div>
       {nextPage && (
-        <button onClick={handleNextPosts} type="button">
+        <button
+          onClick={handleNextPosts}
+          type="button"
+          className={styles.nextPostsBtn}
+        >
           Carregar Mais
         </button>
       )}
@@ -90,7 +109,13 @@ export const getStaticProps: GetStaticProps = async () => {
   const posts = postsResponse.results.map(post => {
     return {
       uid: post.uid,
-      first_publication_date: post.first_publication_date,
+      first_publication_date: format(
+        new Date(post.first_publication_date),
+        'Q LLL yyyy',
+        {
+          locale: ptBR,
+        }
+      ),
       data: {
         title: RichText.asText(post.data.title),
         subtitle: RichText.asText(post.data.subtitle),

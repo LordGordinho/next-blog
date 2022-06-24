@@ -1,12 +1,12 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { RichText } from 'prismic-dom';
-import { FiCalendar, FiUser, FiClock } from 'react-icons/fi';
+import { FiCalendar, FiUser } from 'react-icons/fi';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
 import { getPrismicClient } from '../../services/prismic';
 import styles from './post.module.scss';
-// import commonStyles from '../../styles/common.module.scss';
+import commonStyles from '../../styles/common.module.scss';
 
 interface Post {
   first_publication_date: string | null;
@@ -36,15 +36,13 @@ export default function Post({ post }: PostProps): JSX.Element {
         className={styles.banner}
       />
       <article className={styles.post}>
-        <h1>
-          <FiCalendar /> {post.data.title}
-        </h1>
-        <div className={styles.metadatas}>
-          <div className={styles.metadataItem}>
-            <FiClock />
+        <h1>{post.data.title}</h1>
+        <div className={commonStyles.metadatas}>
+          <div className={commonStyles.metadataItem}>
+            <FiCalendar />
             <span>{post.first_publication_date}</span>
           </div>
-          <div className={styles.metadataItem}>
+          <div className={commonStyles.metadataItem}>
             <FiUser />
             <span>{post.data.author}</span>
           </div>
