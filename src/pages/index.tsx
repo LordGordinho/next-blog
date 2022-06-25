@@ -92,7 +92,7 @@ export default function Home({ postsPagination }: HomeProps): JSX.Element {
           type="button"
           className={styles.nextPostsBtn}
         >
-          Carregar Mais
+          Carregar mais posts
         </button>
       )}
     </main>
